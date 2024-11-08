@@ -4,6 +4,7 @@ import React from "react";
 export default function Header() {
   return (
     <div className="bg-[rgb(166,177,216)]">
+      
       <div className="flex flex-col md:flex-row justify-evenly p-4 md:p-14 font-bold text-black min-h-screen">
 
         <div className="items-center basis-full md:basis-1/2 p-4 md:p-[2rem] space-y-4 md:space-y-8 w-full">
@@ -36,6 +37,7 @@ export default function Header() {
             priority
           />
         </div>
+
       </div>
     </div>
   );
