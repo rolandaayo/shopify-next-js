@@ -33,25 +33,25 @@ export default function Navbar() {
           </button>
         </div>
 
-        <div className={`w-full md:w-auto ${isOpen ? 'block' : 'hidden'} md:block transition-all duration-300 ease-in-out`}>
+        <div className={`w-full md:w-auto ${isOpen ? 'block' : 'hidden'} md:block transition-all duration-500 ease-in-out transform ${isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2'} md:opacity-100 md:translate-y-0`}>
           <ul className="flex flex-col md:flex-row items-center justify-center gap-4">
             <li className="w-full md:w-auto text-center">
-              <Link href="/" className="block py-2 md:py-0 hover:text-gray-600 transition-colors duration-200 hover:scale-105 transform">
+              <Link href="/" className="block py-2 md:py-0 hover:text-gray-600 transition-all duration-300 ease-in-out hover:scale-105 transform">
                 Home
               </Link>
             </li>
             <li className="w-full md:w-auto text-center">
-              <Link href="/about" className="block py-2 md:py-0 hover:text-gray-600 transition-colors duration-200 hover:scale-105 transform">
+              <Link href="/about" className="block py-2 md:py-0 hover:text-gray-600 transition-all duration-300 ease-in-out hover:scale-105 transform">
                 About
               </Link>
             </li>
             <li className="w-full md:w-auto text-center">
-              <a href="#" className="block py-2 md:py-0 hover:text-gray-600 transition-colors duration-200 hover:scale-105 transform">
+              <a href="#" className="block py-2 md:py-0 hover:text-gray-600 transition-all duration-300 ease-in-out hover:scale-105 transform">
                 Projects
               </a>
             </li>
             <li className="w-full md:w-auto text-center">
-              <a href="#" className="block py-2 md:py-0 hover:text-gray-600 transition-colors duration-200 hover:scale-105 transform">
+              <a href="#" className="block py-2 md:py-0 hover:text-gray-600 transition-all duration-300 ease-in-out hover:scale-105 transform">
                 Contacts
               </a>
             </li>
