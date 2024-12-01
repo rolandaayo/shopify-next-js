@@ -3,7 +3,7 @@
 
   Shopify is a fully responsive music production website, Responsive for all devices. <br/> Built using HTML, CSS, and JavaScript.
 
-  <a href="https://rolandaayo.github.io/ktizo-studios/"><strong>➥ Live Demo</strong></a>
+  <a href="https://shopify-with-nextjs.vercel.app/"><strong>➥ Live Demo</strong></a>
 
 </div>
 
@@ -19,20 +19,20 @@ Before you begin, ensure you have met the following requirements:
 
 * [Git](https://git-scm.com/downloads "Download Git") must be installed on your operating system.
 
-### Installing Ktizo Studios
+### Installing Shopify
 
-To install **Ktizo Studios**, run this command on your git bash:
+To install **Shopify**, run this command on your git bash:
 
 Linux and macOS:
 
 ```bash
-sudo git clone https://github.com/rolandaayo/ktizo-studios.git
+sudo git clone https://github.com/rolandaayo/shopify-next-js.git
 ```
 
 Windows:
 
 ```bash
-git clone https://github.com/rolandaayo/ktizo-studios.git
+git clone https://github.com/rolandaayo/shopify-next-js.git
 ```
 
 ## 💬 Contact
