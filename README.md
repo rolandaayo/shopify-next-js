@@ -1,7 +1,7 @@
 <div align="center">
   <h2 align="center">Shopify - E-commerce Website</h2>
 
-  Shopify is a fully responsive music production website, Responsive for all devices. <br/> Built using HTML, CSS, and JavaScript.
+  Shopify is a fully responsive music production website, Responsive for all devices. <br/> Built using Next.js and TailwindCSS.
 
   <a href="https://shopify-with-nextjs.vercel.app/"><strong>➥ Live Demo</strong></a>
 
