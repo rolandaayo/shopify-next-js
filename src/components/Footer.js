@@ -1,9 +1,35 @@
 import React from 'react'
 
 export default function Footer() {
+  const companyLinks = [
+    { text: "About Us", href: "#" },
+    { text: "Careers", href: "#" },
+    { text: "Contact Us", href: "#" },
+    { text: "Press", href: "#" }
+  ]
+
+  const shopLinks = [
+    { text: "All Products", href: "#" },
+    { text: "New Arrivals", href: "#" },
+    { text: "Best Sellers", href: "#" },
+    { text: "Discounts", href: "#" }
+  ]
+
+  const supportLinks = [
+    { text: "Help Center", href: "#" },
+    { text: "Shipping Info", href: "#" },
+    { text: "Returns", href: "#" },
+    { text: "Order Status", href: "#" }
+  ]
+
+  const policyLinks = [
+    { text: "Privacy Policy", href: "#" },
+    { text: "Terms of Service", href: "#" },
+    { text: "Cookie Policy", href: "#" }
+  ]
+
   return (
     <div>
-        
         <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white shadow-2xl">
           <div className="max-w-7xl mx-auto px-4 py-20 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-16">
@@ -11,35 +37,44 @@ export default function Footer() {
               <div className="text-center sm:text-left transform hover:scale-105 transition duration-300 hover:shadow-xl p-6 rounded-xl backdrop-blur-sm bg-gray-800/30">
                 <h3 className="text-2xl font-bold mb-6 text-blue-400 border-b border-blue-400/30 pb-2">Company</h3>
                 <ul className="space-y-4">
-                  <li><a href="#" className="hover:text-blue-400 transition duration-300 flex items-center gap-2 hover:translate-x-2">About Us</a></li>
-                  <li><a href="#" className="hover:text-blue-400 transition duration-300 flex items-center gap-2 hover:translate-x-2">Careers</a></li>
-                  <li><a href="#" className="hover:text-blue-400 transition duration-300 flex items-center gap-2 hover:translate-x-2">Contact Us</a></li>
-                  <li><a href="#" className="hover:text-blue-400 transition duration-300 flex items-center gap-2 hover:translate-x-2">Press</a></li>
+                  {companyLinks.map((link, index) => (
+                    <li key={index}>
+                      <a href={link.href} className="hover:text-blue-400 transition duration-300 flex items-center gap-2 hover:translate-x-2">
+                        {link.text}
+                      </a>
+                    </li>
+                  ))}
                 </ul>
               </div>
-        
+
               {/* Shop */}
               <div className="text-center sm:text-left transform hover:scale-105 transition duration-300 hover:shadow-xl p-6 rounded-xl backdrop-blur-sm bg-gray-800/30">
                 <h3 className="text-2xl font-bold mb-6 text-blue-400 border-b border-blue-400/30 pb-2">Shop</h3>
                 <ul className="space-y-4">
-                  <li><a href="#" className="hover:text-blue-400 transition duration-300 flex items-center gap-2 hover:translate-x-2">All Products</a></li>
-                  <li><a href="#" className="hover:text-blue-400 transition duration-300 flex items-center gap-2 hover:translate-x-2">New Arrivals</a></li>
-                  <li><a href="#" className="hover:text-blue-400 transition duration-300 flex items-center gap-2 hover:translate-x-2">Best Sellers</a></li>
-                  <li><a href="#" className="hover:text-blue-400 transition duration-300 flex items-center gap-2 hover:translate-x-2">Discounts</a></li>
+                  {shopLinks.map((link, index) => (
+                    <li key={index}>
+                      <a href={link.href} className="hover:text-blue-400 transition duration-300 flex items-center gap-2 hover:translate-x-2">
+                        {link.text}
+                      </a>
+                    </li>
+                  ))}
                 </ul>
               </div>
-        
+
               {/* Support */}
               <div className="text-center sm:text-left transform hover:scale-105 transition duration-300 hover:shadow-xl p-6 rounded-xl backdrop-blur-sm bg-gray-800/30">
                 <h3 className="text-2xl font-bold mb-6 text-blue-400 border-b border-blue-400/30 pb-2">Support</h3>
                 <ul className="space-y-4">
-                  <li><a href="#" className="hover:text-blue-400 transition duration-300 flex items-center gap-2 hover:translate-x-2">Help Center</a></li>
-                  <li><a href="#" className="hover:text-blue-400 transition duration-300 flex items-center gap-2 hover:translate-x-2">Shipping Info</a></li>
-                  <li><a href="#" className="hover:text-blue-400 transition duration-300 flex items-center gap-2 hover:translate-x-2">Returns</a></li>
-                  <li><a href="#" className="hover:text-blue-400 transition duration-300 flex items-center gap-2 hover:translate-x-2">Order Status</a></li>
+                  {supportLinks.map((link, index) => (
+                    <li key={index}>
+                      <a href={link.href} className="hover:text-blue-400 transition duration-300 flex items-center gap-2 hover:translate-x-2">
+                        {link.text}
+                      </a>
+                    </li>
+                  ))}
                 </ul>
               </div>
-        
+
               {/* Newsletter */}
               <div className="text-center sm:text-left transform hover:scale-105 transition duration-300 hover:shadow-xl p-6 rounded-xl backdrop-blur-sm bg-gray-800/30">
                 <h3 className="text-2xl font-bold mb-6 text-blue-400 border-b border-blue-400/30 pb-2">Stay Connected</h3>
@@ -56,7 +91,7 @@ export default function Footer() {
                 </div>
               </div>
             </div>
-        
+
             {/* Bottom Section */}
             <div className="border-t border-gray-700/50 mt-16 pt-10">
               <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
@@ -64,15 +99,16 @@ export default function Footer() {
                   <p className="text-gray-400 hover:text-gray-300 transition duration-300">© 2024 Your Store. All rights reserved.</p>
                 </div>
                 <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-8 text-center sm:text-left">
-                  <a href="#" className="hover:text-blue-400 transition duration-300 hover:underline">Privacy Policy</a>
-                  <a href="#" className="hover:text-blue-400 transition duration-300 hover:underline">Terms of Service</a>
-                  <a href="#" className="hover:text-blue-400 transition duration-300 hover:underline">Cookie Policy</a>
+                  {policyLinks.map((link, index) => (
+                    <a key={index} href={link.href} className="hover:text-blue-400 transition duration-300 hover:underline">
+                      {link.text}
+                    </a>
+                  ))}
                 </div>
               </div>
             </div>
           </div>
         </footer>
-        
     </div>
   )
 }

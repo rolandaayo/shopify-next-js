@@ -5,6 +5,13 @@ import React, { useState } from "react";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
+  const navItems = [
+    { name: 'Home', path: '/', isLink: true },
+    { name: 'About', path: '/about', isLink: true },
+    { name: 'Projects', path: '#', isLink: false },
+    { name: 'Contacts', path: '#', isLink: false },
+  ];
+
   return (
     <div className="sticky top-0 z-50">
       <nav className="flex flex-col md:flex-row justify-evenly items-center bg-white/90 backdrop-blur-sm text-black py-7 text-2xl font-bold transition-all duration-300 ease-in-out">
@@ -35,26 +42,19 @@ export default function Navbar() {
 
         <div className={`w-full md:w-auto md:block transition-all duration-300 ease-in-out transform origin-top ${isOpen ? 'max-h-96 opacity-100 scale-y-100' : 'max-h-0 opacity-0 scale-y-0'} md:opacity-100 md:max-h-full md:scale-y-100 overflow-hidden`}>
           <ul className="flex flex-col md:flex-row items-center justify-center gap-4">
-            <li className="w-full md:w-auto text-center">
-              <Link href="/" className="block py-2 md:py-0 hover:text-gray-600 transition-all duration-300 ease-in-out hover:scale-105 transform">
-                Home
-              </Link>
-            </li>
-            <li className="w-full md:w-auto text-center">
-              <Link href="/about" className="block py-2 md:py-0 hover:text-gray-600 transition-all duration-300 ease-in-out hover:scale-105 transform">
-                About
-              </Link>
-            </li>
-            <li className="w-full md:w-auto text-center">
-              <a href="#" className="block py-2 md:py-0 hover:text-gray-600 transition-all duration-300 ease-in-out hover:scale-105 transform">
-                Projects
-              </a>
-            </li>
-            <li className="w-full md:w-auto text-center">
-              <a href="#" className="block py-2 md:py-0 hover:text-gray-600 transition-all duration-300 ease-in-out hover:scale-105 transform">
-                Contacts
-              </a>
-            </li>
+            {navItems.map((item, index) => (
+              <li key={index} className="w-full md:w-auto text-center">
+                {item.isLink ? (
+                  <Link href={item.path} className="block py-2 md:py-0 hover:text-gray-600 transition-all duration-300 ease-in-out hover:scale-105 transform">
+                    {item.name}
+                  </Link>
+                ) : (
+                  <a href={item.path} className="block py-2 md:py-0 hover:text-gray-600 transition-all duration-300 ease-in-out hover:scale-105 transform">
+                    {item.name}
+                  </a>
+                )}
+              </li>
+            ))}
           </ul>
         </div>
       </nav>
