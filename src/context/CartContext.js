@@ -73,14 +73,16 @@ export function CartProvider({ children }) {
   // Calculate total price
   const getTotalPrice = () => {
     return cartItems.reduce((total, item) => {
-      const price = parseFloat(item.price.replace('$', ''));
-      return total + price * item.quantity;
+      // Convert $ to ₦ (example rate: 1$ = ₦750)
+      const priceInNaira = parseFloat(item.price.replace('$', '')) * 750;
+      return total + priceInNaira * item.quantity;
     }, 0);
   };
 
   return (
     <CartContext.Provider value={{ 
       cartItems, 
+      setCartItems,
       addToCart, 
       removeFromCart,
       incrementQuantity,

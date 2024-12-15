@@ -1,4 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Add base font styles */
+@layer base {
+  body {
+    @apply font-poppins;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-playfair;
+  }
+}
+
+/* Add custom styles for specific elements */
+.hero-title {
+  @apply font-playfair font-bold;
+  letter-spacing: -0.02em;
+}
+
+.nav-link {
+  @apply font-poppins font-medium;
+}
+
+.price-text {
+  @apply font-playfair font-bold;
+}
+
+.body-text {
+  @apply font-poppins;
+  letter-spacing: -0.01em;
+}
+
+@keyframes highlight {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(79, 70, 229, 0.4);
+  }
+  50% {
+    transform: scale(1.03);
+    box-shadow: 0 0 0 10px rgba(79, 70, 229, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(79, 70, 229, 0);
+  }
+}
+
+.highlight-product {
+  animation: highlight 1s ease-out;
+}
 
