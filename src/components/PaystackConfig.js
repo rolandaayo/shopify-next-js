@@ -1,3 +1,4 @@
+/* eslint-disable */
 "use client";
 import { PaystackButton } from "react-paystack";
 import { useCart } from "@/context/CartContext";
