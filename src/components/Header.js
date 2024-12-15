@@ -1,7 +1,17 @@
+"use client"
+
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 
 export default function Header() {
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    // Implement search functionality here
+    console.log("Searching for:", searchQuery);
+  };
+
   return (
     <div className="bg-gradient-to-r from-[#a6b1d8] to-[#b8c1e3]">
       
