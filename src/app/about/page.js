@@ -1,6 +1,6 @@
 /* eslint-disable */
 'use client';
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Image from 'next/image'
@@ -45,6 +45,16 @@ export default function About() {
       }
     },
   ];
+
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return null;
+  }
 
   return (
     <div className="min-h-screen bg-gray-50">
