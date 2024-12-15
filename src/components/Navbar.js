@@ -5,6 +5,7 @@ import { useCart } from "@/context/CartContext";
 import PaystackConfig from './PaystackConfig';
 import { useRouter } from 'next/navigation';
 import { useSearch } from "@/context/SearchContext";
+import Image from "next/image";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -128,6 +129,7 @@ export default function Navbar() {
                   <Link 
                     href={item.path} 
                     className="nav-link hover:text-gray-600 transition-all duration-300 ease-in-out hover:scale-105 transform relative"
+                    onClick={() => setIsOpen(false)}
                   >
                     {item.name}
                     {item.name === 'Orders' && orderCount > 0 && (
@@ -137,7 +139,11 @@ export default function Navbar() {
                     )}
                   </Link>
                 ) : (
-                  <a href={item.path} className="hover:text-gray-600 transition-all duration-300 ease-in-out hover:scale-105 transform">
+                  <a 
+                    href={item.path} 
+                    className="hover:text-gray-600 transition-all duration-300 ease-in-out hover:scale-105 transform"
+                    onClick={() => setIsOpen(false)}
+                  >
                     {item.name}
                   </a>
                 )}
@@ -179,11 +185,14 @@ export default function Navbar() {
                       scrollToProduct(product.id);
                     }}
                   >
-                    <img
-                      src={product.image}
-                      alt={product.text}
-                      className="w-12 h-12 object-cover rounded-md"
-                    />
+                    <div className="relative w-12 h-12">
+                      <Image
+                        src={product.image}
+                        alt={product.text}
+                        fill
+                        className="object-cover rounded-md"
+                      />
+                    </div>
                     <div>
                       <h3 className="font-medium text-sm">{product.text}</h3>
                       <p className="text-sm text-indigo-600">{product.price}</p>
@@ -246,10 +255,11 @@ export default function Navbar() {
                   {cartItems.map((item, index) => (
                     <div key={index} className="flex items-start gap-3 border-b pb-3">
                       <div className="relative w-16 h-16 md:w-20 md:h-20 bg-gray-50 rounded-lg overflow-hidden flex-shrink-0">
-                        <img 
-                          src={item.image} 
-                          alt={item.text} 
-                          className="w-full h-full object-cover"
+                        <Image
+                          src={item.image}
+                          alt={item.text}
+                          fill
+                          className="object-cover"
                         />
                       </div>
                       <div className="flex-1 min-w-0">

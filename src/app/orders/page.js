@@ -58,7 +58,7 @@ export default function Orders() {
                       <div className="space-y-4">
                         {order.items.map((item, itemIndex) => (
                           <div key={itemIndex} className="flex items-center gap-4">
-                            <div className="w-16 h-16 relative flex-shrink-0">
+                            <div className="relative w-16 h-16 flex-shrink-0">
                               <Image
                                 src={item.image}
                                 alt={item.text}
