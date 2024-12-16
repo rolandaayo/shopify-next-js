@@ -17,10 +17,14 @@ export default function Navbar() {
   const { searchProducts, searchResults, setSearchResults } = useSearch();
   const [showSearchResults, setShowSearchResults] = useState(false);
   const [orderCount, setOrderCount] = useState(0);
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    const orders = JSON.parse(localStorage.getItem('orders') || '[]');
-    setOrderCount(orders.length);
+    setIsMounted(true);
+    if (typeof window !== 'undefined') {
+      const orders = JSON.parse(localStorage.getItem('orders') || '[]');
+      setOrderCount(orders.length);
+    }
   }, []);
 
   const handleSearch = (e) => {
@@ -60,24 +64,29 @@ export default function Navbar() {
   };
 
   const scrollToProduct = (productId) => {
-    const productElement = document.getElementById(`product-${productId}`);
-    if (productElement) {
-      const navbarHeight = document.querySelector('nav').offsetHeight;
-      const productPosition = productElement.getBoundingClientRect().top;
-      const offsetPosition = productPosition + window.pageYOffset - navbarHeight - 20;
+    if (typeof window !== 'undefined') {
+      const productElement = document.getElementById(`product-${productId}`);
+      if (productElement) {
+        const navbarHeight = document.querySelector('nav')?.offsetHeight || 0;
+        const productPosition = productElement.getBoundingClientRect().top;
+        const offsetPosition = productPosition + window.pageYOffset - navbarHeight - 20;
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
 
-      // Add highlight effect
-      productElement.classList.add('highlight-product');
-      setTimeout(() => {
-        productElement.classList.remove('highlight-product');
-      }, 2000);
+        productElement.classList.add('highlight-product');
+        setTimeout(() => {
+          productElement.classList.remove('highlight-product');
+        }, 2000);
+      }
     }
   };
+
+  if (!isMounted) {
+    return null; // or a loading spinner
+  }
 
   return (
     <div className="sticky top-0 z-50">
