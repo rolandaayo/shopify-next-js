@@ -47,7 +47,6 @@ export default function Navbar() {
 
   const navItems = [
     { name: 'Home', path: '/', isLink: true },
-    { name: 'About', path: '/about', isLink: true },
     { name: 'Orders', path: '/orders', isLink: true },
   ];
 
