@@ -1,4 +1,3 @@
-/* eslint-disable */
 "use client";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -19,39 +18,93 @@ export default function Products() {
       return;
     }
 
-    setAddedToCart(prev => ({
+    setAddedToCart((prev) => ({
       ...prev,
-      [product.id]: true
+      [product.id]: true,
     }));
 
     addToCart(product, selectedSize);
 
     setTimeout(() => {
-      setAddedToCart(prev => ({
+      setAddedToCart((prev) => ({
         ...prev,
-        [product.id]: false
+        [product.id]: false,
       }));
     }, 1000);
   };
 
   const arrivals = [
-    { id: 1, text: "Summer T-Shirt", price: "$299", image: "/images/product-1.png", sizes: ["S", "M", "L", "XL"] },
-    { id: 2, text: "Casual Shirt", price: "$299", image: "/images/product-2.png", sizes: ["S", "M", "L", "XL"] },
-    { id: 3, text: "Denim Jacket", price: "$299", image: "/images/product-3.png", sizes: ["S", "M", "L", "XL"] },
+    {
+      id: 1,
+      text: "Summer T-Shirt",
+      price: "$299",
+      image: "/images/product-1.png",
+      sizes: ["S", "M", "L", "XL"],
+    },
+    {
+      id: 2,
+      text: "Casual Shirt",
+      price: "$299",
+      image: "/images/product-2.png",
+      sizes: ["S", "M", "L", "XL"],
+    },
+    {
+      id: 3,
+      text: "Denim Jacket",
+      price: "$299",
+      image: "/images/product-3.png",
+      sizes: ["S", "M", "L", "XL"],
+    },
   ];
   const featured = [
-    { id: 4, text: "Classic Polo", price: "$299", image: "/images/product-4.png", sizes: ["S", "M", "L", "XL"] },
-    { id: 5, text: "Striped Shirt", price: "$299", image: "/images/product-5.png", sizes: ["S", "M", "L", "XL"] },
-    { id: 6, text: "Casual Blazer", price: "$299", image: "/images/product-6.png", sizes: ["S", "M", "L", "XL"] },
-    { id: 7, text: "Formal Shirt", price: "$299", image: "/images/product-7.png", sizes: ["S", "M", "L", "XL"] },
-    { id: 8, text: "Designer Tee", price: "$299", image: "/images/product-8.png", sizes: ["S", "M", "L", "XL"] },
-    { id: 9, text: "Casual Sweater", price: "$299", image: "/images/product-9.png", sizes: ["S", "M", "L", "XL"] },
+    {
+      id: 4,
+      text: "Classic Polo",
+      price: "$299",
+      image: "/images/product-4.png",
+      sizes: ["S", "M", "L", "XL"],
+    },
+    {
+      id: 5,
+      text: "Striped Shirt",
+      price: "$299",
+      image: "/images/product-5.png",
+      sizes: ["S", "M", "L", "XL"],
+    },
+    {
+      id: 6,
+      text: "Casual Blazer",
+      price: "$299",
+      image: "/images/product-6.png",
+      sizes: ["S", "M", "L", "XL"],
+    },
+    {
+      id: 7,
+      text: "Formal Shirt",
+      price: "$299",
+      image: "/images/product-7.png",
+      sizes: ["S", "M", "L", "XL"],
+    },
+    {
+      id: 8,
+      text: "Designer Tee",
+      price: "$299",
+      image: "/images/product-8.png",
+      sizes: ["S", "M", "L", "XL"],
+    },
+    {
+      id: 9,
+      text: "Casual Sweater",
+      price: "$299",
+      image: "/images/product-9.png",
+      sizes: ["S", "M", "L", "XL"],
+    },
   ];
 
   const ProductCard = ({ item, isNew }) => (
-    <div 
+    <div
       id={`product-${item.id}`}
-      key={item.id} 
+      key={item.id}
       className="items-center text-center lg:w-[30%] group relative cursor-pointer hover:transform hover:scale-105 transition-all duration-500 ease-in-out"
       onMouseEnter={() => setHoveredProduct(item.id)}
       onMouseLeave={() => setHoveredProduct(null)}
@@ -72,12 +125,12 @@ export default function Products() {
 
       <div className="overflow-hidden rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 bg-white">
         <div className="relative">
-          <Image 
-            src={item.image} 
-            alt={item.text} 
-            width={500} 
-            height={500} 
-            className="rounded-t-3xl group-hover:opacity-95 transition-all duration-500 transform group-hover:scale-110" 
+          <Image
+            src={item.image}
+            alt={item.text}
+            width={500}
+            height={500}
+            className="rounded-t-3xl group-hover:opacity-95 transition-all duration-500 transform group-hover:scale-110"
           />
         </div>
       </div>
@@ -89,22 +142,24 @@ export default function Products() {
         <h1 className="price-text text-3xl text-indigo-600 font-bold mb-4">
           {item.price}
         </h1>
-        
+
         <div className="flex justify-center gap-2 mb-4">
-          {item.sizes.map(size => (
+          {item.sizes.map((size) => (
             <button
               key={size}
               onClick={(e) => {
                 e.stopPropagation();
-                setSelectedSizes(prev => ({
+                setSelectedSizes((prev) => ({
                   ...prev,
-                  [item.id]: size
+                  [item.id]: size,
                 }));
               }}
               className={`w-8 h-8 rounded-full border transition-all duration-300 hover:shadow-md
-                ${selectedSizes[item.id] === size 
-                  ? 'border-indigo-600 bg-indigo-600 text-white scale-110' 
-                  : 'border-gray-300 hover:border-indigo-600 hover:scale-105'}`}
+                ${
+                  selectedSizes[item.id] === size
+                    ? "border-indigo-600 bg-indigo-600 text-white scale-110"
+                    : "border-gray-300 hover:border-indigo-600 hover:scale-105"
+                }`}
             >
               {size}
             </button>
@@ -115,15 +170,18 @@ export default function Products() {
           onClick={() => handleAddToCart(item)}
           disabled={addedToCart[item.id]}
           className={`relative overflow-hidden text-xl text-white px-8 py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 w-full
-            ${addedToCart[item.id] 
-              ? 'bg-green-600 hover:bg-green-700' 
-              : 'bg-indigo-600 hover:bg-indigo-700'}`}
+            ${
+              addedToCart[item.id]
+                ? "bg-green-600 hover:bg-green-700"
+                : "bg-indigo-600 hover:bg-indigo-700"
+            }`}
         >
           <span className="relative z-10">
-            {addedToCart[item.id] ? '✓ Added!' : 'Add To Cart'}
+            {addedToCart[item.id] ? "✓ Added!" : "Add To Cart"}
           </span>
-          <span className={`absolute inset-0 bg-white opacity-25 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left
-            ${addedToCart[item.id] ? 'scale-x-100' : ''}`}
+          <span
+            className={`absolute inset-0 bg-white opacity-25 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left
+            ${addedToCart[item.id] ? "scale-x-100" : ""}`}
           />
         </button>
       </div>

@@ -1,5 +1,4 @@
-/* eslint-disable */
-"use client"
+"use client";
 
 import Image from "next/image";
 import React, { useState } from "react";
@@ -19,8 +18,8 @@ export default function Header() {
             </h1>
 
             <p className="body-text text-lg md:text-2xl mt-4 text-gray-700 leading-relaxed">
-              This is the factor that sets us apart from competition and allows us
-              deliver a specialist business service team applies its ranging
+              This is the factor that sets us apart from competition and allows
+              us deliver a specialist business service team applies its ranging
               experience determining.
             </p>
 
