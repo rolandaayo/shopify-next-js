@@ -13,6 +13,8 @@
 
 ![Micro Desktop Demo](./readme-images/readme-1.png "Desktop Demo")
 
+🛒 I built a modern eCommerce Shopify project using Next.js and TailwindCSS. This project features a seamless and responsive design, optimized for fast loading and a smooth user experience. It includes essential eCommerce functionalities like product listing, filtering, and a custom shopping cart for streamlined online shopping.
+
 ### Prerequisites
 
 Before you begin, ensure you have met the following requirements:
